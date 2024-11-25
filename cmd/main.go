@@ -43,4 +43,10 @@ func main() {
 
 	everyRes := slice.From(res).Every(func(v int) bool { return v == 0 })
 	fmt.Println("Result every:", everyRes)
+
+	sum := slice.From(res).Reduce(func(acc, curr int) int {
+		return acc + curr
+	}, 0)
+	fmt.Println("Result reduce:", sum)
+
 }
